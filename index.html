@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Loredane Camões | Custom Cabinetry & Interior Design Portfolio</title>
+
+  <style>
+    :root {
+      --ivory: #F5EFE6;
+      --paper: #FFFDF8;
+      --taupe: #B8A99A;
+      --clay: #C58F7B;
+      --olive: #596B45;
+      --charcoal: #18242D;
+      --gold: #B9935A;
+      --ink: #243038;
+      --muted: #6E746E;
+      --line: #DED4C6;
+      --soft-card: #FAF6EE;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .portfolio {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--paper);
+    }
+
+    .page {
+      padding: 64px;
+      border-bottom: 1px solid var(--line);
+      page-break-after: always;
+      background: var(--paper);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(245,239,230,0.98), rgba(255,253,248,0.96)),
+        radial-gradient(circle at top right, rgba(185,147,90,0.18), transparent 40%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--charcoal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: 64px;
+      letter-spacing: -0.045em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 42px;
+      letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 15.5px;
+    }
+
+    .lead {
+      font-size: 23px;
+      line-height: 1.35;
+      max-width: 640px;
+      color: var(--ink);
+      margin-bottom: 26px;
+    }
+
+    .sublead {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 16px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .pill,
+    .tag {
+      border: 1px solid var(--line);
+      color: var(--charcoal);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 12px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 7px 10px;
+      background: #FFFDF8;
+    }
+
+    .hero-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(24,36,45,0.18);
+      aspect-ratio: 4 / 5;
+      background: var(--taupe);
+    }
+
+    .hero-image img,
+    .project-image img,
+    .mini-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      font-family: Georgia, serif;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .approach-compact {
+      margin-top: 56px;
+      padding-top: 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .approach-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--soft-card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 32px rgba(24,36,45,0.045);
+    }
+
+    .card h3 {
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .project-page-heading {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .project-page-heading p {
+      color: var(--muted);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+      margin-top: 42px;
+      break-inside: avoid;
+    }
+
+    .project.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .project.reverse .project-image {
+      order: 2;
+    }
+
+    .project-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 52px rgba(24,36,45,0.14);
+      aspect-ratio: 1.35 / 1;
+      background: var(--taupe);
+    }
+
+    .project-text {
+      padding: 8px;
+    }
+
+    .project-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--olive);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .project-description {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+    }
+
+    .mini-project {
+      background: var(--soft-card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(24,36,45,0.08);
+      break-inside: avoid;
+    }
+
+    .mini-image {
+      aspect-ratio: 1.55 / 1;
+      background: var(--taupe);
+      overflow: hidden;
+    }
+
+    .mini-content {
+      padding: 26px;
+    }
+
+    .mini-content h3 {
+      font-size: 24px;
+    }
+
+    .mini-content p {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .skill-block {
+      border-left: 2px solid var(--gold);
+      padding-left: 18px;
+    }
+
+    .skill-block h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .skill-block p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .experience-contact {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .experience {
+      display: grid;
+      gap: 22px;
+    }
+
+    .role {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .role-title {
+      font-weight: 700;
+      color: var(--charcoal);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .role-meta {
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .role p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 840px;
+    }
+
+    .contact-panel {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border-radius: 28px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 22px 58px rgba(24,36,45,0.18);
+    }
+
+    .contact-panel h2,
+    .contact-panel h3 {
+      color: var(--ivory);
+    }
+
+    .contact-panel .lead {
+      color: #E8DED0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .contact-card {
+      border: 1px solid rgba(245,239,230,0.18);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .contact-card span {
+      display: block;
+      color: var(--taupe);
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 7px;
+    }
+
+    .contact-card strong {
+      color: var(--ivory);
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size: 13.2px;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 36px 24px;
+      }
+
+      .hero,
+      .section-grid,
+      .project,
+      .project.reverse,
+      .project-duo,
+      .stats,
+      .approach-list,
+      .skills,
+      .experience-contact,
+      .project-page-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .project.reverse .project-image {
+        order: 0;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .lead {
+        font-size: 20px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 297mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .portfolio {
+        width: 297mm;
+        max-width: 297mm;
+        margin: 0 auto;
+        background: var(--paper);
+      }
+
+      .page {
+        width: 297mm;
+        min-height: 210mm;
+        height: 210mm;
+        padding: 14mm 17mm;
+        page-break-after: always;
+        break-after: page;
+        border-bottom: none;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero {
+        min-height: 210mm;
+        height: 210mm;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 14mm;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 42pt;
+        line-height: 0.95;
+        margin-bottom: 8mm;
+      }
+
+      h2 {
+        font-size: 27pt;
+        line-height: 1;
+        margin-bottom: 6mm;
+      }
+
+      h3 {
+        font-size: 17pt;
+        margin-bottom: 3mm;
+      }
+
+      p {
+        font-size: 11pt;
+        line-height: 1.42;
+        margin-bottom: 4mm;
+      }
+
+      .lead {
+        font-size: 15pt;
+        line-height: 1.34;
+        margin-bottom: 6mm;
+      }
+
+      .sublead {
+        font-size: 11pt;
+        line-height: 1.42;
+      }
+
+      .eyebrow,
+      .label,
+      .project-kicker {
+        font-size: 7.4pt;
+        margin-bottom: 3.5mm;
+      }
+
+      .meta {
+        margin-top: 8mm;
+        gap: 2.5mm;
+      }
+
+      .pill,
+      .tag {
+        font-size: 7.2pt;
+        padding: 4px 8px;
+      }
+
+      .hero-image {
+        aspect-ratio: 4 / 4.6;
+        border-radius: 20px;
+        box-shadow: 0 18px 44px rgba(24,36,45,0.16);
+      }
+
+      .section-grid {
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 12mm;
+      }
+
+      .stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5mm;
+        margin-top: 7mm;
+      }
+
+      .stat {
+        background: var(--soft-card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 5mm;
+      }
+
+      .stat strong {
+        font-size: 23pt;
+      }
+
+      .stat span {
+        font-size: 8.5pt;
+      }
+
+      .approach-compact {
+        margin-top: 9mm;
+        padding-top: 7mm;
+        border-top: 1px solid var(--line);
+      }
+
+      .approach-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5mm;
+        margin-top: 5mm;
+      }
+
+      .card {
+        border-radius: 15px;
+        padding: 5.5mm;
+        box-shadow: 0 10px 24px rgba(24,36,45,0.045);
+      }
+
+      .card h3 {
+        font-size: 14.5pt;
+      }
+
+      .card p {
+        font-size: 10.5pt;
+        line-height: 1.38;
+      }
+
+      .project-page-heading {
+        grid-template-columns: 1fr 1fr;
+        gap: 10mm;
+        margin-bottom: 6mm;
+      }
+
+      .project-page-heading p {
+        font-size: 10.5pt;
+      }
+
+      .project {
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 11mm;
+        margin-top: 5mm;
+        align-items: center;
+        min-height: 124mm;
+        break-inside: avoid;
+      }
+
+      .project.reverse {
+        grid-template-columns: 0.92fr 1.08fr;
+      }
+
+      .project.reverse .project-image {
+        order: 2;
+      }
+
+      .project-image {
+        aspect-ratio: 1.52 / 1;
+        border-radius: 18px;
+        box-shadow: 0 15px 38px rgba(24,36,45,0.14);
+      }
+
+      .project-text {
+        padding: 0;
+      }
+
+      .project-description {
+        font-size: 11pt;
+        line-height: 1.42;
+        margin-bottom: 4mm;
+      }
+
+      .tags {
+        gap: 2mm;
+      }
+
+      .project-duo {
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+        height: 166mm;
+      }
+
+      .mini-project {
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(24,36,45,0.08);
+      }
+
+      .mini-image {
+        aspect-ratio: 1.55 / 1;
+      }
+
+      .mini-content {
+        padding: 6mm;
+      }
+
+      .mini-content h3 {
+        font-size: 16pt;
+      }
+
+      .mini-content p {
+        font-size: 10.6pt;
+        line-height: 1.38;
+        margin-bottom: 3.2mm;
+      }
+
+      .skills {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5mm;
+        margin-top: 6mm;
+      }
+
+      .skill-block {
+        padding-left: 4mm;
+      }
+
+      .skill-block h3 {
+        font-size: 13pt;
+      }
+
+      .skill-block p {
+        font-size: 10.2pt;
+        line-height: 1.38;
+      }
+
+      .experience-contact {
+        grid-template-columns: 1.18fr 0.82fr;
+        gap: 7mm;
+        height: 178mm;
+        align-items: start;
+      }
+
+      .experience-contact h2 {
+        font-size: 24pt;
+        margin-bottom: 5mm;
+      }
+
+      .experience-contact .eyebrow {
+        margin-bottom: 3mm;
+      }
+
+      .experience {
+        gap: 3.6mm;
+      }
+
+      .role {
+        padding-top: 3.6mm;
+      }
+
+      .role-title {
+        font-size: 10.2pt;
+      }
+
+      .role-meta {
+        font-size: 7.8pt;
+        margin-bottom: 1.6mm;
+      }
+
+      .role p {
+        font-size: 9.4pt;
+        line-height: 1.32;
+        margin-bottom: 0;
+      }
+
+      .contact-panel {
+        border-radius: 18px;
+        padding: 6mm;
+        min-height: 0;
+        height: auto;
+        box-shadow: 0 12px 30px rgba(24,36,45,0.16);
+        background: var(--charcoal) !important;
+      }
+
+      .contact-panel h2 {
+        font-size: 22pt;
+        line-height: 1;
+        margin-bottom: 5mm;
+      }
+
+      .contact-panel .lead {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 10.2pt;
+        font-weight: 400;
+        line-height: 1.48;
+        letter-spacing: 0.01em;
+        margin-bottom: 4mm;
+      }
+
+      .contact-grid {
+        gap: 2.4mm;
+        margin-top: 4mm;
+      }
+
+      .contact-card {
+        padding: 3.4mm 4mm;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.04) !important;
+      }
+
+      .contact-card span {
+        font-size: 7pt;
+        font-weight: 600;
+        letter-spacing: 0.11em;
+        margin-bottom: 1.6mm;
+      }
+
+      .contact-card strong {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 8.6pt;
+        font-weight: 500;
+        line-height: 1.45;
+        letter-spacing: 0.01em;
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="portfolio">
+
+    <section class="page hero">
+      <div>
+        <div class="eyebrow">Portfolio · USA & Canada · Remote Collaboration</div>
+
+        <h1>Loredane Camões</h1>
+
+        <p class="lead">
+          Custom Cabinetry & Interior Designer creating intelligent, functional, and emotionally comfortable interiors for compact residential spaces.
+        </p>
+
+        <p class="sublead">
+          Specialized in kitchen design, custom millwork, built-in storage, and residential interiors shaped by neuroarchitecture principles, spatial clarity, and production-ready detailing.
+        </p>
+
+        <div class="meta">
+          <span class="pill">Custom Cabinetry</span>
+          <span class="pill">Kitchen & Bath Design</span>
+          <span class="pill">Millwork Design</span>
+          <span class="pill">Compact Living</span>
+          <span class="pill">Neuroarchitecture</span>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="02-neuro1.PNG" alt="Integrated living, dining and kitchen interior by Loredane Camões" />
+      </div>
+    </section>
+
+    <section class="page page-overview">
+      <div class="section-grid">
+        <div>
+          <div class="label">Professional Snapshot</div>
+          <h2>Design that makes small spaces work beautifully.</h2>
+        </div>
+
+        <div>
+          <p>
+            I design custom cabinetry and residential interiors that turn everyday client needs into functional, production-ready spaces — kitchens, bedrooms, bathrooms, living areas, and complete apartment renovations.
+          </p>
+
+          <p>
+            My work combines compact-space planning, cabinetry detailing, material coordination, and photorealistic visualization to help clients make confident decisions before production begins.
+          </p>
+
+          <p>
+            With a neuroscience-informed approach, I focus on spatial flow, visual order, lighting strategy, sensory comfort, and storage systems that reduce friction in daily routines.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>100+</strong>
+              <span>Residential cabinetry projects</span>
+            </div>
+
+            <div class="stat">
+              <strong>30+</strong>
+              <span>Full-apartment packages</span>
+            </div>
+
+            <div class="stat">
+              <strong>50+</strong>
+              <span>Kitchen projects delivered</span>
+            </div>
+
+            <div class="stat">
+              <strong>70%</strong>
+              <span>Self-originated close rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="approach-compact">
+        <div class="section-grid">
+          <div>
+            <div class="label">Design Approach</div>
+            <h2>Calm, organized, practical — without losing warmth.</h2>
+          </div>
+
+          <div>
+            <div class="approach-list">
+              <div class="card">
+                <h3>Compact Intelligence</h3>
+                <p>
+                  I use cabinetry as architecture: every vertical surface, niche, drawer, and transition becomes an opportunity to improve storage, circulation, and daily usability.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>Functional Beauty</h3>
+                <p>
+                  My interiors are designed to feel clean and refined, but never empty. Materials, lighting, and proportions support both visual harmony and practical use.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>Neuroarchitecture</h3>
+                <p>
+                  I apply visual order, soft contrast, natural references, indirect lighting, and sensory comfort to create spaces that feel intuitive and emotionally balanced.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page page-projects-intro">
+      <div class="project-page-heading">
+        <div>
+          <div class="label">Selected Projects</div>
+          <h2>Residential interiors and custom cabinetry concepts.</h2>
+        </div>
+
+        <p>
+          A curated selection of compact residential interiors, kitchen planning, custom cabinetry, built-in storage, and neuroarchitecture-informed visual solutions.
+        </p>
+      </div>
+
+      <article class="project">
+        <div class="project-image">
+          <img src="09-neuro.png" alt="Soft compact bedroom with integrated home office" />
+        </div>
+
+        <div class="project-text">
+          <div class="project-kicker">Bedroom · Home Office · Built-in Storage</div>
+
+          <h3>Compact Bedroom + Workstation</h3>
+
+          <p class="project-description">
+            A soft, compact bedroom designed around dual function: rest and productivity. The cabinetry integrates wardrobe storage, overhead cabinets, open shelving, and a work surface without visually overwhelming the room.
+          </p>
+
+          <p class="project-description">
+            Warm indirect lighting, botanical patterns, soft textiles, and muted clay tones create a sense of calm while maintaining enough structure for focus and daily organization.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Compact Living</span>
+            <span class="tag">Storage Optimization</span>
+            <span class="tag">Home Office</span>
+            <span class="tag">Soft Lighting</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="page">
+      <div class="project-duo">
+        <article class="mini-project">
+          <div class="mini-image">
+            <img src="01 - 1.png" alt="Living room with custom media wall and warm wood cabinetry" />
+          </div>
+
+          <div class="mini-content">
+            <div class="project-kicker">Living Room · Media Wall · Millwork</div>
+
+            <h3>Warm Living Room with Built-in Media Wall</h3>
+
+            <p>
+              A refined living area with custom millwork framing the TV wall, concealed storage, ambient lighting, and a compact coffee station integrated into the cabinetry system.
+            </p>
+
+            <p>
+              The composition balances vertical lines, warm wood tones, soft upholstery, and biophilic accents to create a calm social space with a polished residential feel.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Media Wall</span>
+              <span class="tag">Custom Millwork</span>
+              <span class="tag">Living Room</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-project">
+          <div class="mini-image">
+            <img src="13.png" alt="Compact kitchen and laundry with custom cabinetry" />
+          </div>
+
+          <div class="mini-content">
+            <div class="project-kicker">Kitchen · Laundry · Technical Planning</div>
+
+            <h3>Compact Kitchen + Laundry Integration</h3>
+
+            <p>
+              A linear kitchen planned to integrate food preparation, storage, appliances, and laundry functions in a single efficient wall.
+            </p>
+
+            <p>
+              A neutral palette, upper cabinetry, warm wood fronts, and a stone-textured backsplash create a practical, modern environment suitable for compact apartments.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Kitchen Design</span>
+              <span class="tag">Laundry Integration</span>
+              <span class="tag">Small Space</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="project-duo">
+        <article class="mini-project">
+          <div class="mini-image">
+            <img src="02-neuro1.PNG" alt="Integrated living, dining and kitchen interior" />
+          </div>
+
+          <div class="mini-content">
+            <div class="project-kicker">Open Plan · Living · Dining · Kitchen</div>
+
+            <h3>Open Living, Dining & Kitchen Concept</h3>
+
+            <p>
+              An integrated residential interior designed to connect living, dining, and kitchen functions while maintaining visual separation through materials, lighting, and vertical elements.
+            </p>
+
+            <p>
+              The muted green kitchen cabinetry, warm wood partition, textured upholstery, and soft natural light create a cohesive environment that feels organized and welcoming.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Open Plan</span>
+              <span class="tag">Kitchen + Living</span>
+              <span class="tag">Material Harmony</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="mini-project">
+          <div class="mini-image">
+            <img src="03-neuro 01.png" alt="Dark compact bedroom with workstation and custom wardrobes" />
+          </div>
+
+          <div class="mini-content">
+            <div class="project-kicker">Bedroom · Wardrobe · Workstation</div>
+
+            <h3>Dark-Toned Bedroom + Focus Zone</h3>
+
+            <p>
+              A compact bedroom with a stronger, more immersive palette. Deep blue cabinetry, warm wood surfaces, integrated lighting, and a desk zone create a private environment that supports focus, rest, and organization.
+            </p>
+
+            <p>
+              The cabinetry system uses vertical storage and overhead compartments to maximize capacity while preserving a clean and intentional visual rhythm.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Wardrobe Design</span>
+              <span class="tag">Focus Zone</span>
+              <span class="tag">Built-in Desk</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page">
+      <article class="project reverse">
+        <div class="project-image">
+          <img src="12.png" alt="Wellness vanity and beauty area with custom cabinetry" />
+        </div>
+
+        <div class="project-text">
+          <div class="project-kicker">Wellness · Vanity · Display Cabinetry</div>
+
+          <h3>Wellness Vanity / Beauty Area</h3>
+
+          <p class="project-description">
+            A boutique-inspired vanity and wellness area designed with symmetry, layered lighting, vertical niches, soft textures, and integrated greenery.
+          </p>
+
+          <p class="project-description">
+            The cabinetry creates a display-and-storage system that feels luxurious but orderly, supporting both commercial presentation and daily personal-care rituals.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Vanity Design</span>
+            <span class="tag">Display Cabinetry</span>
+            <span class="tag">Wellness Space</span>
+            <span class="tag">Layered Lighting</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="skills">
+        <div class="skill-block">
+          <h3>Design</h3>
+          <p>
+            Custom cabinetry, kitchen design, furniture specification, residential interiors, compact-space planning, and storage systems.
+          </p>
+        </div>
+
+        <div class="skill-block">
+          <h3>Technical</h3>
+          <p>
+            Shop drawings, cabinet detailing, material and hardware specification, production coordination, and layout optimization.
+          </p>
+        </div>
+
+        <div class="skill-block">
+          <h3>Visualization</h3>
+          <p>
+            SketchUp, SketchUp Layout, Promob, 3ds Max, Corona Render, D5 Render, and AI-assisted rendering workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="experience-contact">
+        <div>
+          <div class="label">Experience</div>
+
+          <h2>From concept to production-ready documentation.</h2>
+
+          <div class="experience">
+            <div class="role">
+              <div class="role-title">Freelance Cabinetry & Interior Designer</div>
+              <div class="role-meta">Self-Employed · Brazil / Remote · 2025–Present</div>
+              <p>
+                Delivers full-cycle residential cabinetry and interior design projects for private clients and manufacturing partners, including kitchens, bedrooms, bathrooms, home offices, and complete apartments.
+              </p>
+            </div>
+
+            <div class="role">
+              <div class="role-title">Custom Cabinetry & Interior Designer · Sole In-House Designer</div>
+              <div class="role-meta">Aviz Design de Interiores · Itajaí, Brazil · 2024–2025</div>
+              <p>
+                Owned the complete client lifecycle — briefing, concept design, technical drawings, production coordination, and after-sales support — for 100+ residential cabinetry projects.
+              </p>
+            </div>
+
+            <div class="role">
+              <div class="role-title">Architectural Visualization & Interior Designer</div>
+              <div class="role-meta">Self-Employed · Remote · 2021–2025</div>
+              <p>
+                Produced 100+ photorealistic architectural visualizations for architects, interior designers, and furniture manufacturers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact-panel">
+          <div>
+            <div class="eyebrow">Available for Remote Collaboration</div>
+
+            <h2>Designing cabinetry and interiors that make compact homes feel clear, functional, and deeply considered.</h2>
+
+            <p class="lead">
+              Open to project-based, contractor, and long-term freelance opportunities with interior design studios, custom cabinetry companies, and millwork teams in the United States and Canada.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <span>Email</span>
+              <strong>danecamoes@gmail.com</strong>
+            </div>
+
+            <div class="contact-card">
+              <span>Phone / WhatsApp</span>
+              <strong>+55 47 99784-4305</strong>
+            </div>
+
+            <div class="contact-card">
+              <span>LinkedIn</span>
+              <strong>linkedin.com/in/loredanecamoes</strong>
+            </div>
+
+            <div class="contact-card">
+              <span>Location</span>
+              <strong>Balneário Camboriú, Brazil · GMT-3</strong>
+            </div>
+
+            <div class="contact-card">
+              <span>Focus</span>
+              <strong>Custom Cabinetry · Kitchen & Bath · Millwork</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
